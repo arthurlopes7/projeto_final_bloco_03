@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globais adicionais */
+html, body {
+  @apply h-full;
+}
+
+body {
+  @apply bg-blue-50 text-gray-900 flex flex-col min-h-screen;
+}
+
+#root {
+  @apply flex-grow;
+}
+
+footer {
+  @apply mt-auto;
+}
