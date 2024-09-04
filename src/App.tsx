@@ -1,25 +1,34 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './components/Home';
-// Importe outros componentes conforme necessário
+import { ToastContainer } from "react-toastify";
+import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import ListaCategorias from "./components/ListaCategorias";
+import DeletarCategoria from "./components/DeleteCategoria";
+import FormCategoria from "./components/FormCategoria";
 
-const App: React.FC = () => {
+function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
+    <>
+      <ToastContainer />
+      <BrowserRouter>
         <Navbar />
-        <main className="flex-grow">
+        <div className="min-h-[80vh]">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* Defina outras rotas aqui */}
+            <Route path="/home" element={<Home />} />
+            <Route path="/categorias" element={<ListaCategorias />} />
+          <Route path="/cadastrarcategoria" element={<FormCategoria />} />
+          <Route path="/editarcategoria/:id" element={<FormCategoria />} />
+          <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
           </Routes>
-        </main>
+        </div>
         <Footer />
-      </div>
-    </Router>
+      </BrowserRouter>
+    </>
   );
-};
+}
 
 export default App;

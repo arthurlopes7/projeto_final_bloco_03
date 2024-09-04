@@ -1,18 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-const Navbar: React.FC = () => {
+function Navbar() {
   return (
-    <nav className="bg-blue-800 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold">Farmácia</Link>
-        <div>
-          <Link to="/" className="px-4 hover:text-blue-300">Home</Link>
-          <Link to="/categories" className="px-4 hover:text-blue-300">Categorias</Link>
+    <div className="flex justify-center bg-blue-900 py-4 w-full text-white">
+      <div className="container flex justify-between text-lg">
+        <Link to="/home" className="font-bold text-2xl">
+          Farmacia Arthur
+        </Link>
+        <div className="flex gap-12">
+          <Link to="/categorias" className="hover:underline hover:text-blue-300">
+            Categorias
+          </Link>
+          <Link to="/cadastrarcategoria" className="hover:underline hover:text-blue-300">
+            Cadastrar Categoria
+          </Link>
         </div>
       </div>
-    </nav>
+    </div>
   );
-};
+}
 
 export default Navbar;
+
